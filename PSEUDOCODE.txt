@@ -1,0 +1,85 @@
+PSEUDOCODE
+Introduction
+Pseudocode is a simple way of explaining the steps a system follows to solve a problem. It uses plain English and basic programming instructions without following the rules of a specific programming language.
+In this project, pseudocode explains how the Waste Collection Management System registers waste collection requests, checks request status, and updates collection information.
+Main Program
+BEGIN
+    DISPLAY "WASTE COLLECTION MANAGEMENT SYSTEM"
+
+     DECLARE wasteType : STRING
+     DECLARE wasteWeight : REAL
+     DECLARE  wasteCategory : STRING
+     DECLARE recyclable : BOOLEAN 
+
+    DISPLAY "1. Register Waste Request"
+    DISPLAY "2. Check Request Status"
+    DISPLAY "3. Exit"
+    INPUT Choice
+    IF Choice = 1 THEN
+        CALL Register Request
+    ELSE IF Choice = 2 THEN
+        CALL Check Request Status
+
+    ELSE IF Choice = 3 THEN
+        DISPLAY "Thank you for using the system"
+    ELSE
+        DISPLAY "Invalid choice"
+
+    END IF
+END
+Register Waste Request
+BEGIN
+    INPUT Resident Name
+    INPUT Contact Number
+    INPUT Waste Location
+    INPUT Waste Description
+    IF any information is missing THEN
+        DISPLAY "Please enter all required information"
+    ELSE
+        SAVE the request
+        ASSIGN a Request ID
+        SET Status = "Pending"
+        DISPLAY "Request registered successfully"
+        DISPLAY Request ID
+        DISPLAY "Status: Pending"
+    END IF
+END
+Check Request Status
+BEGIN
+    INPUT Request ID
+    SEARCH for the Request ID
+    IF Request ID is found THEN
+        DISPLAY Request Details
+        DISPLAY Request Status
+    ELSE
+        DISPLAY "Request not found"
+    END IF
+END
+Update Request Status
+BEGIN
+    INPUT Request ID
+    SEARCH for the Request ID
+    IF Request ID is found THEN
+        DISPLAY "1. In Progress"
+        DISPLAY "2. Completed"
+        INPUT New Status
+        IF New Status = 1 THEN
+            SET Status = "In Progress"
+        ELSE IF New Status = 2 THEN
+            SET Status = "Completed"
+        ELSE
+            DISPLAY "Invalid status choice"
+        END IF
+
+    ELSE
+        DISPLAY "Request not found"
+    END IF
+END
+Explanation of the Pseudocode
+The pseudocode uses basic programming concepts to describe how the system works.
+* Input: The system collects the resident's name, contact number, waste location, and waste description.
+* Processing: The system checks the information, saves the request, and assigns a request identification number.
+* Selection: IF and ELSE statements allow the system to make decisions based on the information provided.
+* Output: The system displays confirmation messages, request details, and request statuses.
+* Storage: The system saves request information so it can be checked and updated later.
+
